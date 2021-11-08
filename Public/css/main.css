@@ -1,0 +1,85 @@
+*, ::before, ::after {
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: skyblue;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ 
+/* svg {
+    width: 90vw;
+    height: auto;
+}  */
+
+.bg-3 { 
+    background-color: #ffffff;
+    color: #555555;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+.active>a {
+  color: #1abc9c !important;
+}
+
+header .content {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+section {
+    background-color: #ccc;
+  }
+
+.wrapper {
+    background-color: greenyellow;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .wrapper .content {
+    background-color: goldenrod;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  footer {
+    background-color: red;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
