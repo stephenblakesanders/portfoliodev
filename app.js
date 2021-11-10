@@ -3,7 +3,6 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const gsap = require('gsap')
 
 // static files
 app.use(express.static('public'))
@@ -30,3 +29,4 @@ app.get('/contact', (req, res, next) => {
 
 // listen on port 3000
 app.listen(port, console.info('listening on port 3000'))
+console.info(process.pid)

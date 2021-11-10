@@ -1,36 +1,34 @@
-// pathfinder visualization
-console.clear();
-const svg = document.querySelector("svg");
+var lastClicked;
+var grid = clickableGrid(20,40,function(el,row,col,i){
+    console.log("You clicked on element:",el);
+    console.log("You clicked on row:",row);
+    console.log("You clicked on col:",col);
+    console.log("You clicked on item #:",i);
 
-const svgns = "http://www.w3.org/2000/svg";
-
-// change any value
-var rx = 0;
-var ry = 0;
-let width = 900;
-let height = 650;
-let targets = 38;
-const colorArray = ["#94c356", "#46a4cc", "#a63e4b"];
-
-// figure the new svg width/height
-const svgWidth = width * targets;
-const svgHeight = height;
-
-svg.setAttribute('width', `${svgWidth}`)
-svg.setAttribute('height', `${svgHeight}`)
-svg.setAttribute('viewbox', `0 0 ${svgWidth} ${svgHeight}`)
-
-/* svg.setAttribute("width", `${svgWidth}`);
-svg.setAttribute("height", `${svgHeight}`);
-svg.setAttribute("viewbox", "0 0 " + svgWidth + " " + svgHeight); */
-
-for (let i = 0; i < targets; i++) {
-    let newRect = document.createElementNS(svgns, "rect");
-    console.log("circle")
-    newRect.setAttribute("x", rx + i * 30);
-    newRect.setAttribute("y", "0");
-    newRect.setAttribute("width", "25");
-    newRect.setAttribute("height", "25");
-    newRect.setAttribute("fill", "#5cceee");
-    svg.appendChild(newRect);
+    el.className='clicked';
+    if (lastClicked) lastClicked.className='';
+    lastClicked = el;
+});
+     
+function clickableGrid( rows, cols, callback ){
+    var i=0;
+    var grid = document.createElement('table');
+    grid.className = 'grid';
+    for (var r=0;r<rows;++r){
+        var tr = grid.appendChild(document.createElement('tr'));
+        for (var c=0;c<cols;++c){
+            var cell = tr.appendChild(document.createElement('td'));
+            cell.innerHTML = ++i;
+            cell.addEventListener('click',(function(el,r,c,i){
+                return function(){
+                    callback(el,r,c,i);
+                }
+            })(cell,r,c,i),false);
+        }
+    }
+    return grid;
 }
+
+var wrapper = document.getElementById('wrapper');
+wrapper.appendChild(grid);
+//document.body.appendChild(grid);
