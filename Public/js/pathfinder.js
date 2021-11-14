@@ -8,6 +8,7 @@ var grid = clickableGrid(20,40,function(el,row,col,i){
     el.className='clicked';
     if (lastClicked) lastClicked.className='';
     lastClicked = el;
+    
 });
      
 function clickableGrid( rows, cols, callback ){
@@ -28,6 +29,7 @@ function clickableGrid( rows, cols, callback ){
     }
     return grid;
 }
+
 
 var wrapper = document.getElementById('wrapper');
 wrapper.appendChild(grid);

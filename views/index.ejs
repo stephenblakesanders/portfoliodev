@@ -1,57 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('partials/head') -%> 
-   <!--  
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="active-menu" content='<%= menuId %>'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Website | <%= page %></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/scripts.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <%- include('partials/head') -%>
 </head>
 
-<header>
-    <%- include('partials/nav') -%> 
-    <!-- <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand" href="#">Stephen Blake Sanders</a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li id="home"><a href="/">HOME</a></li>
-              <li id="about"><a href="/about">RESUME</a></li>
-              <li id="contact"><a href="/contact">CONTACT</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav> -->
-</header>
-
 <body>
-    <section>
-        <div class="wrapper" id="wrapper">
-<!--             <div class="wrapper content"> -->
-                    <!-- <canvas id="myCanvas"></canvas> -->
-<!--             </div> -->
+    <div id="page-container">
+        <div id="content-wrap">
+            <header>
+                <%- include('partials/nav') -%> 
+            </header>
+            
+            <div class="myAnimation">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+                <div id="title">
+                    <span>Dev Portfolio<br></span>
+                </div>
+            </div>
         </div>
-    </section>
+
+        </div>
+
+        <footer>
+            <%- include('partials/footer') -%>
+        </footer>
+    </div>
 </body>
 
-<footer>
-    <p>footer</p>
-</footer>
-
-<%- include('partials/pathfinder') -%>
 <%- include('partials/script') -%>
 </html>

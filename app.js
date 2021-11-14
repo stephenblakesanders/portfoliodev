@@ -27,6 +27,10 @@ app.get('/contact', (req, res, next) => {
     res.render('contact', { page: 'Contact', menuId:'contact' })
 })
 
+app.get('/pathfinder', (req, res, next) => {
+    res.render('pathfinder', { page: 'About', menuId:'about' })
+})
+
 // listen on port 3000
 app.listen(port, console.info('listening on port 3000'))
 console.info(process.pid)
